@@ -1,0 +1,49 @@
+{
+  "name": "@sifat046/blockchain-web3-tools",
+  "version": "0.1.0",
+  "description": "Lightweight multi-chain wallet connector + BP Coin test utils",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./connectors": {
+      "import": "./dist/connectors/index.js",
+      "require": "./dist/connectors/index.cjs"
+    },
+    "./bpcoin": {
+      "import": "./dist/bpcoin/index.js",
+      "require": "./dist/bpcoin/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs --sourcemap --clean",
+    "dev": "tsup src/index.ts --dts --format esm,cjs --watch",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "wallet",
+    "web3",
+    "evm",
+    "solana",
+    "crypto",
+    "testing"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  }
+}
